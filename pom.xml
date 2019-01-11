@@ -7,11 +7,27 @@
 
     <groupId>com.ayzilya</groupId>
     <artifactId>firstProject</artifactId>
+    <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <properties>
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
     </properties>
+
+
+    <build>
+        <defaultGoal>package</defaultGoal>
+        <plugins>
+            <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <configuration>
+                        <webXml>web\WEB-INF\web.xml</webXml>
+                    </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 <dependencies>
     <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
     <dependency>
@@ -27,6 +43,10 @@
         <version>2.3.3</version>
         <scope>provided</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-war-plugin -->
+
+
+
 
 </dependencies>
 </project>
